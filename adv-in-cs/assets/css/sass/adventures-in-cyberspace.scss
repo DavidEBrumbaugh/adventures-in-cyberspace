@@ -1,0 +1,136 @@
+/**
+ * Adventures in Cyberspace
+ * http://xk29.com/theme
+ *
+ * Copyright (c) 2016 David Brumbaugh
+ * Licensed under the GPLv2+ license.
+ */
+
+@mixin roundedURCorner( $radius ) {
+  -moz-border-radius-topright: $radius;
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin roundedULCorner( $radius ) {
+  -moz-border-radius-topleft: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin standardShadow() {
+  -webkit-box-shadow: -5px -3px 5px 0px rgba(50, 50, 50, 0.82);
+  -moz-box-shadow:    -5px -3px 5px 0px rgba(50, 50, 50, 0.82);
+  box-shadow:         -5px -3px 5px 0px rgba(50, 50, 50, 0.82);
+}
+
+@mixin tabShadow() {
+  -webkit-box-shadow: 3px 0px 3px 0px rgba(50, 50, 50, 0.82);
+  -moz-box-shadow:    3px 0px 3px 0px rgba(50, 50, 50, 0.82);
+  box-shadow:         3px 0px 3px 0px rgba(50, 50, 50, 0.82);
+}
+
+@mixin selectedShadow() {
+  -webkit-box-shadow: 4px 0px 0px 0px rgba(50, 50, 50, 0.82);
+  -moz-box-shadow:    4px 0px 0px 0px rgba(50, 50, 50, 0.82);
+  box-shadow:         4px 0px 0px 0px rgba(50, 50, 50, 0.82);
+}
+
+@mixin rotateText( $angle ) {
+  transform: rotate($angle) translate(calc(-100% + 12px), -100%);
+  transform-origin: top left;
+
+}
+
+@mixin rotateTextSimple( $angle ) {
+  transform: rotate($angle) translateY(-50%);
+  transform-origin: top left;
+
+}
+
+@mixin rotateTextSimple2( $angle ) {
+  transform: rotate($angle);
+  transform-origin: top left;
+
+}
+
+$folder-color : #ead799;
+$background-color: #667f71;
+$corner-radius: 7px;
+
+$normal-typewriter: "special_eliteregular", "Courier 10 Pitch", Courier, monospace;
+$normal-marker: "rabioheadregular", "Bitstream Vera Sans Mono", "Lucida Sans Typewriter", "DejaVu Sans Mono", Consolas, "Andale Mono", "Lucida Console", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+$heavy-marker: "permanent_markerregular", "Bitstream Vera Sans Mono", "Lucida Sans Typewriter", "DejaVu Sans Mono", Consolas, "Andale Mono", "Lucida Console", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+$label-maker: "impact_labelregular", "Courier 10 Pitch", Courier, monospace;
+$heavy-stencil: "boycottregular", "Lucida Grande", Verdana, Arial, "Bitstream Vera Sans", sans-serif;
+$ball-point-pen:  "blokletters_balpenbalpen", "Bitstream Vera Sans Mono", "Lucida Sans Typewriter", "DejaVu Sans Mono", Consolas, "Andale Mono", "Lucida Console", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+$stamp: "top_secretbold", "Courier 10 Pitch", Courier, monospace;
+$bold-typewriter: "momstypewriterregular", "Courier 10 Pitch", Courier, monospace;
+$adventure: "true_crimesregular", $normal-marker;
+
+@import 'fonts/impact_regular/_stylesheet';
+@import 'fonts/rifle/_stylesheet';
+@import 'fonts/1942/_stylesheet';
+@import 'fonts/elite/_stylesheet';
+@import 'fonts/marker/_stylesheet';
+@import "fonts/small-marker/_stylesheet";
+@import "fonts/marker/_stylesheet";
+@import "fonts/not-courier-bold/_stylesheet";
+@import "fonts/not-courier-regular/stylesheet";
+@import "fonts/mom-regular/stylesheet";
+@import "fonts/boycott/stylesheet";
+@import "fonts/ball-point/stylesheet";
+@import "fonts/topsecret/stylesheet";
+@import "fonts/adventure/stylesheet";
+@import "responsive_grid";
+@import "typeography";
+@import "menu";
+
+
+
+.content-container {
+  background: $folder-color;
+  @include standardShadow();
+  @include roundedURCorner(17px);
+
+}
+
+.category-container {
+  padding-bottom: 25px;
+}
+
+.page-body {
+  padding: 1%;
+  background-image: url("backgrounds/old-paper.jpg");
+  background-repeat: repeat;
+  @include standardShadow();
+}
+
+body {
+  background-color: $background-color;
+}
+
+.blog-header {
+  background-image: url('images/rocket-1a.png');
+  background-repeat: no-repeat;;
+  background-position: 50% top;
+}
+
+img {
+  max-width:100%;
+  max-height:100%;
+  height: auto;
+  width: auto;
+}
+
+img.alignleft {
+  float: left;
+}
+
+img.alignright {
+  float: right;
+}
+
+.tiled-gallery {
+  float: left;
+}

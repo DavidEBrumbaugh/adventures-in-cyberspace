@@ -1,0 +1,311 @@
+//menu-main-menu-container
+
+$pulldown-width: 450px;
+
+.menu-main-menu-container {
+  margin: 0;
+  width: auto;
+  padding: 0;
+  line-height: 1;
+  display: inline;
+  position: absolute;
+  @include rotateText(-90deg);
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+  ul.sub-menu {
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+  }
+  li:before {
+    content: '';
+  }
+  ul:after,
+   :after {
+    content: ' ';
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  ul li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    list-style: none;
+  }
+
+  ul li a {
+    text-decoration: none;
+    display: block;
+    margin: 0;
+    -webkit-transition: color .2s ease;
+    -moz-transition: color .2s ease;
+    -ms-transition: color .2s ease;
+    -o-transition: color .2s ease;
+    transition: color .2s ease;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  ul li ul {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+  }
+
+  ul li ul li {
+    max-height: 0;
+    position: absolute;
+    -webkit-transition: max-height 0.4s ease-out;
+    -moz-transition: max-height 0.4s ease-out;
+    -ms-transition: max-height 0.4s ease-out;
+    -o-transition: max-height 0.4s ease-out;
+    transition: max-height 0.4s ease-out;
+    background-image: url("backgrounds/notecard.png");
+    background-position-y: 10px;
+  }
+
+  ul li ul li.has-sub:after {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background: #000000;
+    z-index: 1;
+    top: 13px;
+    right: 15px;
+  }
+
+  .align-right ul li ul li.has-sub:after {
+    right: auto;
+    left: 15px;
+  }
+
+  ul li ul li.has-sub:before {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    border: 3px solid transparent;
+    border-left-color: #ffffff;
+    z-index: 2;
+    top: 15px;
+    right: 15px;
+  }
+
+  .align-right ul li ul li.has-sub:before {
+    right: auto;
+    left: 15px;
+    border-left-color: transparent;
+    border-right-color: #ffffff;
+  }
+
+  ul li ul li a {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+  //  color: #000000;
+    letter-spacing: 0;
+    display: block;
+    width: $pulldown-width;
+    padding: 11px 10px 11px 20px;
+  }
+
+}
+
+
+.menu-main-menu-container ul li ul li:hover > a,
+.menu-main-menu-container ul li ul li.active > a {
+  text-decoration: underline;
+  font-style: italic;
+  color: #000077;
+}
+.menu-main-menu-container ul li ul li:hover:after,
+.menu-main-menu-container ul li ul li.active:after {
+  text-decoration: underline;
+  font-style: italic;
+  color: #000077;
+}
+.menu-main-menu-container ul li ul li:hover > ul {
+  left: 20%;
+  top: 25px;
+}
+.menu-main-menu-container ul li ul li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+.menu-main-menu-container > ul > li {
+  float: left;
+}
+.menu-main-menu-container.align-center > ul > li {
+  float: none;
+  display: inline-block;
+}
+.menu-main-menu-container.align-center > ul {
+  text-align: center;
+}
+.menu-main-menu-container.align-center ul ul {
+  text-align: left;
+}
+.menu-main-menu-container.align-right > ul {
+  float: right;
+}
+.menu-main-menu-container.align-right > ul > li:hover > ul {
+  left: auto;
+  right: 0;
+}
+.menu-main-menu-container.align-right ul ul li:hover > ul {
+  right: 100%;
+  left: auto;
+}
+.menu-main-menu-container.align-right ul ul li a {
+  text-align: right;
+}
+.menu-main-menu-container > ul > li:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  z-index: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  background-image: url("backgrounds/notecard.png");
+  -webkit-transition: height .2s;
+  -moz-transition: height .2s;
+  -ms-transition: height .2s;
+  -o-transition: height .2s;
+  transition: height .2s;
+}
+.menu-main-menu-container > ul > li.has-sub > a {
+  padding-right: 40px;
+}
+.menu-main-menu-container > ul > li.has-sub > a:after {
+  display: block;
+  content: '';
+  background-image: url("backgrounds/notecard.png");
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  border-radius: 13px;
+  right: 14px;
+  top: 16px;
+}
+.menu-main-menu-container > ul > li.has-sub > a:before {
+  display: block;
+  content: '';
+  border: 4px solid transparent;
+  border-top-color: $folder-color;
+  z-index: 2;
+  height: 0;
+  width: 0;
+  position: absolute;
+  right: 16px;
+  top: 21px;
+  @include  tabShadow();
+  @include roundedURCorner($corner-radius);
+  @include  roundedULCorner($corner-radius);
+  background-color : $folder-color;
+  color: black;
+}
+.menu-main-menu-container > ul > li > a {
+ // color: #000000;
+  padding: 15px 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  z-index: 2;
+  position: relative;
+  border: 1px solid;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: grey;
+  @include tabShadow();
+  @include roundedURCorner($corner-radius);
+  @include  roundedULCorner($corner-radius);
+  background-color: $folder-color;
+}
+
+.menu-main-menu-container > ul > li.current-menu-ancestor > a {
+  border-bottom-color: transparent;
+  @include selectedShadow();
+
+}
+
+.menu-main-menu-container > ul > li.current-menu-item > a {
+  border-bottom-color: transparent;
+  @include selectedShadow();
+
+}
+
+
+.menu-main-menu-container > ul > li:hover:after,
+.menu-main-menu-container > ul > li.active:after {
+  height: 100%;
+}
+.menu-main-menu-container > ul > li:hover > a,
+.menu-main-menu-container > ul > li.active > a {
+  color: #000000;
+}
+.menu-main-menu-container > ul > li:hover > a:after,
+.menu-main-menu-container > ul > li.active > a:after {
+  background: #000000;
+}
+.menu-main-menu-container > ul > li:hover > a:before,
+.menu-main-menu-container > ul > li.active > a:before {
+  border-top-color: #ffffff;
+}
+.menu-main-menu-container > ul > li:hover > ul {
+  left: 0;
+}
+.menu-main-menu-container > ul > li:hover > ul > li {
+  max-height: 72px;
+  position: relative;
+}
+.menu-main-menu-container #menu-button {
+  display: none;
+}
+.menu-main-menu-container > ul > li > a {
+  display: block;
+}
+.menu-main-menu-container > ul > li {
+  width: auto;
+}
+.menu-main-menu-container > ul > li > ul {
+  width: $pulldown-width;
+  display: block;
+}
+.menu-main-menu-container > ul > li > ul > li {
+  width: $pulldown-width;
+  display: block;
+}
+
+.menu-col {
+  margin-bottom: 0px;
+}
+
+.sub-menu {
+  z-index: 5;
+  @include rotateTextSimple(90deg);
+}
+
+.sub-sub-menu {
+  @include rotateTextSimple2(0deg);
+}

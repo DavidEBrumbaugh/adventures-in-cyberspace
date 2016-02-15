@@ -1,0 +1,85 @@
+/**
+* Menu see: http://shinraholdings.com/62/custom-nav-menu-walker-function/
+.main-menu to top menu
+.sub-menu to menus inside the main-menu
+.menu-item to all <li>’s
+.main-menu-item to all <li>’s in the main menu
+.sub-menu-item to all <li>’s in a sub-menu
+.sub-sub-menu to all menus inside a sub-menu
+.menu-even/.menu-odd for <ul>’s (alternating)
+.menu-depth-# to tell you how deep each menu is
+.menu-item-even or .menu-item-odd (alternating)
+.menu-item-depth-# to tell you which level menu the <li> is in
+.menu-link to links
+
+*/
+
+.main-menu {
+  background-color: $folder-color;
+  margin: 0;
+  width: auto;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  position: relative;
+  @include standardShadow();
+  @include roundedURCorner(17px);
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  li:before {
+    content: '';
+  }
+
+  ul:after,
+  :after {
+    content: ' ';
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  ul li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+    list-style: none;
+    a {
+      text-decoration: none;
+      display: block;
+      margin: 0;
+      -webkit-transition: color .2s ease;
+      -moz-transition: color .2s ease;
+      -ms-transition: color .2s ease;
+      -o-transition: color .2s ease;
+      transition: color .2s ease;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    ul {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      li {
+        max-height: 0;
+        position: absolute;
+        -webkit-transition: max-height 0.4s ease-out;
+        -moz-transition: max-height 0.4s ease-out;
+        -ms-transition: max-height 0.4s ease-out;
+        -o-transition: max-height 0.4s ease-out;
+        transition: max-height 0.4s ease-out;
+        background: #ffffff;
+      }
+    }
+  }
+
+}
