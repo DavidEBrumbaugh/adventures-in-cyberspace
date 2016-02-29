@@ -1,0 +1,173 @@
+// The idea on the comments area is to look like old style greebar computer paper with
+// Teletype print
+
+.comments-area {
+  font-family: "telegramarender";
+  .nav-previous, .nav-next {
+    display: inline-block;
+    margin: 10px;
+  }
+  .avatar {
+    float: left;
+    margin-right: 35px;
+  }
+
+  .comment {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .even {
+    background-color: rgba(36, 84, 20, 0.2);
+  }
+  .odd {
+    background-color: rgba(86, 90, 57, 0.2);
+  }
+
+  .reply {
+    padding: 5px;
+  }
+
+  // Since we are emulateing a teletype, we dont' want to alter the font size
+  .comment-body {
+    padding: 5px;
+    h1 {
+      font-family: "telegramarender";
+      letter-spacing: 14px;
+      text-decoration: underline;
+      font-size: inherit;
+      text-transform: uppercase;
+      &:before, &:after {  content: '*'; }
+
+    }
+
+
+    h2 {
+      font-family: "telegramarender";
+      letter-spacing: 12px;
+      text-decoration: underline;
+      font-size: inherit;
+      text-transform: inherit;
+      &:before, &:after { content: '-'; }
+
+    }
+
+
+    h3 {
+      font-family: "telegramarender";
+      letter-spacing: 11px;
+      letter-spacing: inherit;
+      text-decoration: underline;
+      font-size: inherit;
+      text-transform: inherit;
+      &:before, &:after { content: '-'; }
+
+    }
+
+    h4 {
+      font-family: "telegramarender";
+      letter-spacing: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      text-transform: inherit;
+      &:before, &:after  {  content: '-'; }
+
+    }
+
+      h5 {
+        font-family: "telegramarender";
+        letter-spacing: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        text-transform: inherit;
+        &:before, &:after {
+          content: '*';
+        }
+      }
+
+    h6 {
+      font-family: "telegramarender";
+      letter-spacing: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      text-transform: inherit;
+      &:before, &:after {
+        content: '--';
+      }
+    }
+
+    dl {
+      dt {
+        text-decoration: underline;
+        &:after { content: ':'; }
+        font-weight: bold;
+      }
+    }
+    strong {
+      font-family: inherit;
+      font-weight: bolder;
+    }
+
+
+  }
+
+  p {
+    padding-left: 65px;
+  }
+
+  .comment-meta.commentmetadata {
+    margin-bottom: 20px;
+  }
+
+
+
+
+
+  input[type=submit].submit, input[type=image].submit, button.submit {
+
+    width: 200px;
+    height: 71px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+
+    &:active {
+      left: 2px;
+      top: 4px;
+      box-shadow: -5px -4px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  label.submit {
+    font-family: $label-maker;
+    color: #555555;
+    display: inline-block;
+    background-color: white;
+    position: relative;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+  }
+
+  .comment-form-comment label {
+    display: block;
+    &:after {content: ':'}
+    text-decoration: underline;
+    font-weight: bold;
+
+  }
+
+  .comment-form-comment textarea {
+    width: 65%;
+    height: 300px;
+    margin-top: 10px;
+    padding: 5px;
+    display: block;
+    background-image: url(backgrounds/greenbar.png);
+    font-size: 16pt;
+    line-height: 43px;
+    font-family: 'telegramarender';
+  }
+
+}

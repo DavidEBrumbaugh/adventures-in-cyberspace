@@ -14,7 +14,7 @@ get_header(); ?>
 	<div class="col span_10_of_12 page-body"> <!-- Body of Page-->
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ): the_post(); ?>
-		<h2><?php the_title(); ?></h2>
+		<h2 <?php if (  is_front_page() ) { echo 'class="home-page-header"'; } ?> ><?php the_title(); ?></h2>
 		<?php the_content(); ?>
 	<?php endwhile; ?>
 <?php endif; ?>

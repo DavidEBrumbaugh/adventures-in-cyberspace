@@ -20,6 +20,9 @@ function setup() {
 	add_action( 'wp_head',            $n( 'header_meta' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' )     );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' )      );
+
+	add_theme_support( 'post-thumbnails' );
+
 }
 
 /**
@@ -52,6 +55,7 @@ function i18n() {
 function scripts( $debug = false ) {
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
+	wp_enqueue_script('jquery');
 	wp_enqueue_script(
 		'advincs_',
 		ADVINCS__TEMPLATE_URL . "/assets/js/adventures-in-cyberspace{$min}.js",
@@ -59,6 +63,7 @@ function scripts( $debug = false ) {
 		ADVINCS__VERSION,
 		true
 	);
+
 }
 
 /**

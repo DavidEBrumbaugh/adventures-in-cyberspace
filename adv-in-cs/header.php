@@ -15,7 +15,7 @@
 	<body <?php body_class(); ?>>
 	<!-- Start the responsive grid system -->
 	<div class="section group">
-		<div class="col span_1_of_12">
+		<div class="col span_1_of_12 left-margin">
 			<div class="section group">
 				<div class="col span_12_of_12">
 				</div>

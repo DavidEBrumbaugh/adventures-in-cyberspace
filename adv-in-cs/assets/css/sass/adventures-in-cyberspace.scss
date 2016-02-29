@@ -37,18 +37,29 @@
 }
 
 @mixin rotateText( $angle ) {
+  width: auto;
+  @media only screen and (max-width: 600px ) {
+    width: 800px;
+  }
   transform: rotate($angle) translate(calc(-100% + 12px), -100%);
+  @media only screen and (max-width: 600px ) {
+    transform: rotate($angle) translate(calc(-65% ), -100%);
+  }
   transform-origin: top left;
+
 
 }
 
 @mixin rotateTextSimple( $angle ) {
+
   transform: rotate($angle) translateY(-50%);
   transform-origin: top left;
+  z-index: 9999999;
 
 }
 
 @mixin rotateTextSimple2( $angle ) {
+
   transform: rotate($angle);
   transform-origin: top left;
 
@@ -67,6 +78,7 @@ $ball-point-pen:  "blokletters_balpenbalpen", "Bitstream Vera Sans Mono", "Lucid
 $stamp: "top_secretbold", "Courier 10 Pitch", Courier, monospace;
 $bold-typewriter: "momstypewriterregular", "Courier 10 Pitch", Courier, monospace;
 $adventure: "true_crimesregular", $normal-marker;
+$max-z: 50;
 
 @import 'fonts/impact_regular/_stylesheet';
 @import 'fonts/rifle/_stylesheet';
@@ -82,9 +94,12 @@ $adventure: "true_crimesregular", $normal-marker;
 @import "fonts/ball-point/stylesheet";
 @import "fonts/topsecret/stylesheet";
 @import "fonts/adventure/stylesheet";
+@import "fonts/telegram/stylesheet";
+
 @import "responsive_grid";
 @import "typeography";
 @import "menu";
+@import "comments";
 
 
 
@@ -125,12 +140,27 @@ img {
 
 img.alignleft {
   float: left;
+  margin-right: 1.5%;
 }
 
 img.alignright {
   float: right;
+  margin-left: 1.5%;
+}
+
+.aligncenter {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .tiled-gallery {
   float: left;
+  padding-right: 1.5%;
+  z-index: 0;
+  position: relative;
+}
+
+input:focus, textarea:focus {
+  outline-color: $background-color;
 }

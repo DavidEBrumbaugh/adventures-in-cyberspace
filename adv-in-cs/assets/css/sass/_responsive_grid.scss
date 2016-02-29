@@ -78,3 +78,11 @@
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 600px ) {
+  .span_1_of_12.right-margin { margin: 0%;
+    width: 0px; }
+
+  .span_1_of_12.left-margin { margin: 0%;
+    width: 16.208%; }
+}

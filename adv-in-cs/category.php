@@ -9,7 +9,7 @@
 get_header(); ?>
 
 	<div class="content-container category-container">
-	<div class="col span_1_of_12"></div> <!-- Border -->
+	<div class="col span_1_of_12"><?php show_side_menu(); ?></div> <!-- Border -->
 	<div class="col span_10_of_12 category-header"> <!-- Body of Page-->
 		<h2 ><strong><?php single_cat_title(); ?></strong></h2>
 		<div class="category-description">

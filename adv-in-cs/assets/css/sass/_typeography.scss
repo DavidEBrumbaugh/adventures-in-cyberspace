@@ -29,7 +29,6 @@ h1, h2, h3, h4 {
     font-weight: bolder;
   }
   margin-top: 0px;
-  margion-bottom: 1%
 }
 
 .home-page-header {
@@ -94,6 +93,8 @@ ul ol li:before {
 ul ol ul li:before {
   content: '* ';
 }
+
+
 
 
 code {
@@ -199,8 +200,29 @@ blockquote p {
     font-size: 11pt;
 
   }
+  .post-class-outer {
+    padding: 5%;
+  }
 }
 
-.post-body .post-class-outer {
-  padding: 5%;
+.wp-caption-text {
+  font-family: $normal-marker;
+  color: #0000cc;
+  font-size: 14pt;
+  font-style: italic;
 }
+
+.screen-reader-text {
+  color: transparent;
+}
+
+pre, kbd {
+  font-size: 12pt;
+  font-family: monospace, serif;
+}
+
+tt {
+  font-size: 12pt;
+  font-family: 'telegramarender';
+}
+
